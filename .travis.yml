@@ -9,14 +9,14 @@ before_install:
 - export SFDX_DOMAIN_RETRY=300
 - export SFDX_DISABLE_APP_HUB=true
 - export SFDX_LOG_LEVEL=DEBUG
-- pwd
 - mkdir sfdx
 - wget -qO- $URL | tar xJ -C sfdx --strip-components 1
 - "./sfdx/install"
 - export PATH=./sfdx/$(pwd):$PATH
 - sfdx --version
 - sfdx plugins --core
-- pwd
+- ls -lart /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
+- ls -lart assets/server.key
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
   --username $USERNAME --setdefaultdevhubusername -a HubOrg
 script:
