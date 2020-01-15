@@ -21,9 +21,9 @@ before_install:
 - echo $CONSUMERKEY
 - echo $USERNAME
 - sfdx force:auth:jwt:grant --clientid 3MVG91BJr_0ZDQ4sKK7vyPuVtM0Z_9Tq0c8aX7QLddsEJgTRdCaPWKyD8MbsGKV6Y4Zmj.7jrgq.l8F0pQleZ --username abhinav.kumar@eonics.nl --jwtkeyfile /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
-   --setdefaultdevhubusername -a TestSFDX
+   --setdefaultdevhubusername -a DevHub
 script:
-- sfdx force:org:create -v TestSFDX -s -f config/project-scratch-def.json -a ciorg --wait 4
+- sfdx force:org:create -v DevHub -s -f config/project-scratch-def.json -a ciorg --wait 4
 - sfdx force:org:display -u ciorg
 - sfdx force:source:push -u ciorg
 - sfdx force:apex:test:run -u ciorg --wait 10
