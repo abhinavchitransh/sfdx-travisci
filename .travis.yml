@@ -17,6 +17,7 @@ before_install:
 - sfdx plugins --core
 - ls -lart /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
 - ls -lart assets/server.key
+- echo $(pwd)
 - echo $CONSUMERKEY
 - echo $USERNAME
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --username $USERNAME --jwtkeyfile /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
