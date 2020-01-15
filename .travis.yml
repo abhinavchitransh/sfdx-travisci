@@ -18,7 +18,7 @@ before_install:
 - ls -lart /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
 - ls -lart assets/server.key
 - sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --username $USERNAME --jwtkeyfile /home/travis/build/abhinavchitransh/sfdx-travisci/assets/server.key
-   --setdefaultdevhubusername -a HubOrg
+   --setdefaultdevhubusername -a DevHub
 script:
 - sfdx force:org:create -v HubOrg -s -f config/project-scratch-def.json -a ciorg --wait
   2
